@@ -216,3 +216,13 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+
+# Large data files
+files/processed_undervolt_data/
+files/processed_weather_data/
+files/miscellaneous/*.csv
+files/miscellaneous/*.json
+files/miscellaneous/*.geojson
+files/SAIDI_SAIFI/SAIDI_Daily*
+files/SAIDI_SAIFI/SAIFI_Daily*
