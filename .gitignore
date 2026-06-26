@@ -226,3 +226,4 @@ files/miscellaneous/*.json
 files/miscellaneous/*.geojson
 files/SAIDI_SAIFI/SAIDI_Daily*
 files/SAIDI_SAIFI/SAIFI_Daily*
+files/spatial docs_to_cluster/
