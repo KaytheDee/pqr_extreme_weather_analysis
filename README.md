@@ -1,8 +1,8 @@
 # pqr_extreme_weather_analysis
 
-This repository contains data-processing and analysis workflows used to investigate relationships between extreme weather, power outages, voltage quality, and community-level climate vulnerability in Greater Accra, Ghana.
+This repository contains data-processing and analysis workflows used to investigate relationships between extreme weather, power outages, voltage quality, and community-level climate vulnerability in Greater Accra, Ghana (2022 - 2023).
 
-The analysis combines power-quality measurements, weather observations, spatial data, and a Climate Exposure and Sensitivity Index (CESI). The primary study period is 2022–2023.
+The analysis combines power-quality measurements, weather observations, spatial data, and a custom climate vulnerability index. 
 
 ## Research Overview
 
