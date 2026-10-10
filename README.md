@@ -45,17 +45,16 @@ The datasets used in this analysis are organized under `files/`.
 | Processed TAHMO weather-station data | `files/processed_weather_data/` | Processed temperature, precipitation, wind, and lightning observations. |
 | nLine-processed reliability metrics | `files/SAIDI_SAIFI/` | Daily reliability metrics processed by nLine. |
 | Analysis and mapping data | `files/miscellaneous/` | CESI values, sensor-to-EA mappings, site lists, and other supporting files. |
-| Spatial data and weather-comparison inputs | `files/spatial docs_to_cluster/` | EA and district boundaries and selected spatial inputs used by the mapping and weather-comparison notebooks. |
+| Study-area spatial data | `files/spatial docs_to_cluster` | Spatial boundaries for the study area. |
 
 ### External and Restricted Data
 
-Some source datasets are too large to distribute through GitHub and/or only available through their original providers. These include the PQR sensor data, the weather data, and geographic shapefiles.
+Some source datasets are too large to distribute through GitHub and/or only available through their original providers. These include the raw PQR sensor data and source weather data.
 
 To reproduce the complete workflow from the raw data, obtain access to the required source datasets and update the input paths in the corresponding scripts or notebooks. The following provenance and access information should be added where applicable:
 
 - PQR data: [nLine GridWatch public data](https://nline.io/public-data/gridwatch)
 - TAHMO observations: [TAHMO climate data](https://tahmo.org/climate-data/)
-- Study area shapefiles: can be shared with permission from the original source
 - Copernicus product: [ERA5 hourly data on single levels](https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels)
 - CHIRPS precipitation product: [CHIRPS data access](https://www.chc.ucsb.edu/data/chirps)
 
