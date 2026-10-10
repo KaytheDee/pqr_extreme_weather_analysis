@@ -26,6 +26,8 @@ Analyses are primarily conducted at the enumeration-area (EA) level.
 │   ├── processed_weather_data/
 │   └── spatial docs_to_cluster/
 ├── notebooks/              # Data analysis and visualization workflows
+│   ├── archived/           # Superseded and duplicate notebooks
+│   └── supporting_analyses/ # Optional supporting analyses
 ├── outputs/
 │   └── plots/              # Figures produced by the analyses
 ├── scripts/                # Raw voltage-processing scripts
@@ -114,7 +116,7 @@ Run:
 
 This notebook combines the processed 2022 and 2023 hourly voltage data with temperature, sensor, and CESI information. It summarizes the hourly voltages, characterizes undervoltage frequency and severity, and produces temporal voltage and temperature plots.
 
-This workflow is distinct from `_pre_processing_undervolt_workflow_rev4_regression_weather_vars.ipynb`, which contains the optional comparison of voltage with all weather variables described below.
+This workflow is distinct from `supporting_analyses/_pre_processing_undervolt_workflow_rev4_regression_weather_vars.ipynb`, which contains the optional comparison of voltage with all weather variables described below.
 
 #### 4. Run the Voltage-Temperature Analyses
 
@@ -171,7 +173,7 @@ Run:
 
 Run:
 
-- `notebooks/Spatial_Analysis_EAs_REV3.ipynb`
+- `notebooks/supporting_analyses/Spatial_Analysis_EAs_REV3.ipynb`
 
 This notebook produces supplementary geospatial views of the study area, including the study-area boundaries, EAs of interest, weather stations, and PQR sites.
 
@@ -179,8 +181,8 @@ This notebook produces supplementary geospatial views of the study area, includi
 
 The following notebooks compare TAHMO weather-station observations with satellite or gridded weather products:
 
-- `notebooks/Weather_Copernicus_Tahmo_reg_22.ipynb`
-- `notebooks/Weather_CHIRPS_Tahmo_reg_22.ipynb`
+- `notebooks/supporting_analyses/Weather_Copernicus_Tahmo_reg_22.ipynb`
+- `notebooks/supporting_analyses/Weather_CHIRPS_Tahmo_reg_22.ipynb`
 
 The Copernicus notebook compares temperature observations, while the CHIRPS notebook compares precipitation observations. These supporting analyses examine disagreement between the station-based and satellite or gridded products and show why the satellite products were not suitable for the primary analysis.
 
@@ -190,7 +192,7 @@ To replicate these comparisons, download the source satellite-product files usin
 
 Run:
 
-- `notebooks/_pre_processing_undervolt_workflow_rev4_regression_weather_vars.ipynb`
+- `notebooks/supporting_analyses/_pre_processing_undervolt_workflow_rev4_regression_weather_vars.ipynb`
 
 This notebook compares the association between hourly voltage measurements and each weather variable. It is an optional supporting analysis used to show that voltage was more strongly associated with temperature than with the other weather variables.
 
@@ -198,7 +200,7 @@ This notebook compares the association between hourly voltage measurements and e
 
 Run:
 
-- `notebooks/__Supplementary_plots.ipynb`
+- `notebooks/supporting_analyses/__Supplementary_plots.ipynb`
 
 This notebook produces distributions and cumulative distribution functions for the weather variables and extreme-weather hours. It is a supporting analysis and is not required to reproduce the primary models.
 
@@ -217,11 +219,11 @@ This notebook produces distributions and cumulative distribution functions for t
 | Monthly distributions of PQR-derived SAIDI metrics for 2022 and 2023 | `PQR_Metrics_per_Month_SAIDI_22_23.ipynb` |
 | Yearly reliability-metric comparison (sensor-estimated versus official values) | `PQR_Metrics_yearly.ipynb` |
 | CESI processing for 214 EAs | `new_durations_Spatial_Analysis_EAs.ipynb` |
-| Supplementary study-area maps (optional) | `Spatial_Analysis_EAs_REV3.ipynb` |
-| TAHMO versus Copernicus comparison (optional) | `Weather_Copernicus_Tahmo_reg_22.ipynb` |
-| TAHMO versus CHIRPS comparison (optional) | `Weather_CHIRPS_Tahmo_reg_22.ipynb` |
-| Voltage comparison across weather variables (optional) | `_pre_processing_undervolt_workflow_rev4_regression_weather_vars.ipynb` |
-| Supplementary weather distributions/CDFs (optional) | `__Supplementary_plots.ipynb` |
+| Supplementary study-area maps (optional) | `supporting_analyses/Spatial_Analysis_EAs_REV3.ipynb` |
+| TAHMO versus Copernicus comparison (optional) | `supporting_analyses/Weather_Copernicus_Tahmo_reg_22.ipynb` |
+| TAHMO versus CHIRPS comparison (optional) | `supporting_analyses/Weather_CHIRPS_Tahmo_reg_22.ipynb` |
+| Voltage comparison across weather variables (optional) | `supporting_analyses/_pre_processing_undervolt_workflow_rev4_regression_weather_vars.ipynb` |
+| Supplementary weather distributions/CDFs (optional) | `supporting_analyses/__Supplementary_plots.ipynb` |
 
 ## Outputs
 
