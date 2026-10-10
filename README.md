@@ -102,7 +102,7 @@ The scripts currently contain absolute paths. Update the input and output paths 
 
 Run:
 
-- `notebooks/new_durations_Spatial_Analysis_EAs.ipynb`
+- `notebooks/01_build_cesi_index_for_eas.ipynb`
 
 This notebook processes the custom CESI index for the each of the 214 EAs included in the study area. This index is used by the regression and spatial analyses. 
 If using the processed CESI files already included under `files/miscellaneous/`, this step can be skipped.
@@ -111,19 +111,19 @@ If using the processed CESI files already included under `files/miscellaneous/`,
 
 Run:
 
-- `notebooks/_pre_processing_undervolt_workflow_rev3_process_with_plotting.ipynb`
+- `notebooks/02_prepare_and_summarize_hourly_undervoltage.ipynb`
 
 This notebook combines the processed 2022 and 2023 hourly voltage data with temperature, sensor, and CESI information. It summarizes the hourly voltages, characterizes undervoltage frequency and severity, and produces temporal voltage and temperature plots.
 
-This workflow is distinct from `supporting_analyses/_pre_processing_undervolt_workflow_rev4_regression_weather_vars.ipynb`, which contains the optional comparison of voltage with all weather variables described below.
+This workflow is distinct from `notebooks/supporting_analyses/s04_compare_voltage_weather_variables.ipynb`, which contains the optional comparison of voltage with all weather variables described below.
 
 #### 4. Run the Voltage-Temperature Analyses
 
 Run:
 
-- `notebooks/_00_OLS_Undervoltage_Temperature_hrly_from_cluster.ipynb`
-- `notebooks/_01_Logit_Undervoltage_Temperature.ipynb`
-- `notebooks/_01_Logit_Undervoltage_Temperature_with_CESI_interaction.ipynb`
+- `notebooks/03_voltage_temperature_ols.ipynb`
+- `notebooks/04_undervoltage_heat_spell_logit.ipynb`
+- `notebooks/05_undervoltage_heat_spell_logit_cesi.ipynb`
 
 These notebooks contain:
 
@@ -133,11 +133,11 @@ These notebooks contain:
 
 #### 5. Run the Outage and Extreme-Weather Analyses
 
-Run the applicable `_Logit_Co_occurrence...` notebooks:
+Run:
 
-- `notebooks/_Logit_Co_occurrence_per_EA_overlapping_hours_full_model_same_day.ipynb`
-- `notebooks/_Logit_Co_occurrence_per_EA_overlapping_hours_full_model_same_day_CESI.ipynb`
-- `notebooks/_Logit_Co_occurrence_per_EA_overlapping_hours_full_model_3_day_rev1.ipynb`
+- `notebooks/06_outage_extreme_weather_logit_same_day.ipynb`
+- `notebooks/07_outage_extreme_weather_logit_same_day_cesi.ipynb`
+- `notebooks/08_outage_extreme_weather_logit_three_day.ipynb`
 
 These notebooks estimate associations between extreme-weather events and outages at the EA level. They cover same-day and multi-day relationships and include analyses with CESI interactions where indicated.
 
@@ -145,26 +145,26 @@ These notebooks estimate associations between extreme-weather events and outages
 
 Run:
 
-- `notebooks/_Logit_spatial_analysis_undervolt.ipynb`
-- `notebooks/_Logit_spatial_analysis_outage_per_EA_rev2.ipynb`
+- `notebooks/09_map_voltage_temperature_sensitivity.ipynb`
+- `notebooks/10_map_outage_weather_odds_by_ea.ipynb`
 
-`_Logit_spatial_analysis_undervolt.ipynb` maps sensors and sites according to their estimated temperature-voltage and heat-spell-undervoltage relationships.
+`09_map_voltage_temperature_sensitivity.ipynb` maps sensors and sites according to their estimated temperature-voltage and heat-spell-undervoltage relationships.
 
-`_Logit_spatial_analysis_outage_per_EA_rev2.ipynb` maps EAs with increased outage odds for each extreme-weather event, including results disaggregated by CESI.
+`10_map_outage_weather_odds_by_ea.ipynb` maps EAs with increased outage odds for each extreme-weather event, including results disaggregated by CESI.
 
 #### 7. Produce Monthly Summaries and Reliability Comparisons
 
 Run:
 
-- `notebooks/Extreme_Weather_per_Month_rev1.ipynb`
-- `notebooks/PQR_Metrics_per_Month_SAIDI_22_23.ipynb`
-- `notebooks/PQR_Metrics_yearly.ipynb`
+- `notebooks/11_extreme_weather_daily_monthly_heatmaps.ipynb`
+- `notebooks/12_monthly_pqr_saidi_2022_2023.ipynb`
+- `notebooks/13_yearly_reliability_metrics_comparison.ipynb`
 
-`Extreme_Weather_per_Month_rev1.ipynb` produces daily and monthly heatmaps showing the frequency & spatial extent of each extreme-weather event.
+`11_extreme_weather_daily_monthly_heatmaps.ipynb` produces daily and monthly heatmaps showing the frequency & spatial extent of each extreme-weather event.
 
-`PQR_Metrics_per_Month_SAIDI_22_23.ipynb` shows the monthly distributions of the PQR-derived SAIDI metrics for 2022 and 2023.
+`12_monthly_pqr_saidi_2022_2023.ipynb` shows the monthly distributions of the PQR-derived SAIDI metrics for 2022 and 2023.
 
-`PQR_Metrics_yearly.ipynb` compares the yearly distributions of sensor-estimated reliability metrics with the officially reported values.
+`13_yearly_reliability_metrics_comparison.ipynb` compares the yearly distributions of sensor-estimated reliability metrics with the officially reported values.
 
 ### Optional Analyses
 
@@ -172,7 +172,7 @@ Run:
 
 Run:
 
-- `notebooks/supporting_analyses/Spatial_Analysis_EAs_REV3.ipynb`
+- `notebooks/supporting_analyses/s01_supplementary_study_area_maps.ipynb`
 
 This notebook produces supplementary geospatial views of the study area, including the study-area boundaries, EAs of interest, weather stations, and PQR sites.
 
@@ -180,8 +180,8 @@ This notebook produces supplementary geospatial views of the study area, includi
 
 The following notebooks compare TAHMO weather-station observations with satellite or gridded weather products:
 
-- `notebooks/supporting_analyses/Weather_Copernicus_Tahmo_reg_22.ipynb`
-- `notebooks/supporting_analyses/Weather_CHIRPS_Tahmo_reg_22.ipynb`
+- `notebooks/supporting_analyses/s02_compare_tahmo_copernicus_weather.ipynb`
+- `notebooks/supporting_analyses/s03_compare_tahmo_chirps_precipitation.ipynb`
 
 The Copernicus notebook compares temperature observations, while the CHIRPS notebook compares precipitation observations. These supporting analyses examine disagreement between the station-based and satellite or gridded products and show why the satellite products were not suitable for the primary analysis.
 
@@ -191,7 +191,7 @@ To replicate these comparisons, download the source satellite-product files usin
 
 Run:
 
-- `notebooks/supporting_analyses/_pre_processing_undervolt_workflow_rev4_regression_weather_vars.ipynb`
+- `notebooks/supporting_analyses/s04_compare_voltage_weather_variables.ipynb`
 
 This notebook compares the association between hourly voltage measurements and each weather variable. It is an optional supporting analysis used to show that voltage was more strongly associated with temperature than with the other weather variables.
 
@@ -199,7 +199,7 @@ This notebook compares the association between hourly voltage measurements and e
 
 Run:
 
-- `notebooks/supporting_analyses/__Supplementary_plots.ipynb`
+- `notebooks/supporting_analyses/s05_supplementary_weather_distributions.ipynb`
 
 This notebook produces distributions and cumulative distribution functions for the weather variables and extreme-weather hours. It is a supporting analysis and is not required to reproduce the primary models.
 
@@ -207,22 +207,22 @@ This notebook produces distributions and cumulative distribution functions for t
 
 | Research output | Primary notebook |
 |---|---|
-| Hourly voltage-temperature OLS | `_00_OLS_Undervoltage_Temperature_hrly_from_cluster.ipynb` |
-| Undervoltage logistic model | `_01_Logit_Undervoltage_Temperature.ipynb` |
-| Undervoltage model with CESI interaction | `_01_Logit_Undervoltage_Temperature_with_CESI_interaction.ipynb` |
-| Hourly undervoltage summaries and temporal plots | `_pre_processing_undervolt_workflow_rev3_process_with_plotting.ipynb` |
-| Same-day and multi-day outage/weather models | `_Logit_Co_occurrence...ipynb` |
-| Sensor voltage-temperature sensitivity maps | `_Logit_spatial_analysis_undervolt.ipynb` |
-| EA outage-risk maps by weather event and CESI | `_Logit_spatial_analysis_outage_per_EA_rev2.ipynb` |
-| Daily and monthly extreme-weather heatmaps | `Extreme_Weather_per_Month_rev1.ipynb` |
-| Monthly distributions of PQR-derived SAIDI metrics for 2022 and 2023 | `PQR_Metrics_per_Month_SAIDI_22_23.ipynb` |
-| Yearly reliability-metric comparison (sensor-estimated versus official values) | `PQR_Metrics_yearly.ipynb` |
-| CESI processing for 214 EAs | `new_durations_Spatial_Analysis_EAs.ipynb` |
-| Supplementary study-area maps (optional) | `supporting_analyses/Spatial_Analysis_EAs_REV3.ipynb` |
-| TAHMO versus Copernicus comparison (optional) | `supporting_analyses/Weather_Copernicus_Tahmo_reg_22.ipynb` |
-| TAHMO versus CHIRPS comparison (optional) | `supporting_analyses/Weather_CHIRPS_Tahmo_reg_22.ipynb` |
-| Voltage comparison across weather variables (optional) | `supporting_analyses/_pre_processing_undervolt_workflow_rev4_regression_weather_vars.ipynb` |
-| Supplementary weather distributions/CDFs (optional) | `supporting_analyses/__Supplementary_plots.ipynb` |
+| CESI processing for 214 EAs | `01_build_cesi_index_for_eas.ipynb` |
+| Hourly undervoltage summaries and temporal plots | `02_prepare_and_summarize_hourly_undervoltage.ipynb` |
+| Hourly voltage-temperature OLS | `03_voltage_temperature_ols.ipynb` |
+| Undervoltage logistic model | `04_undervoltage_heat_spell_logit.ipynb` |
+| Undervoltage model with CESI interaction | `05_undervoltage_heat_spell_logit_cesi.ipynb` |
+| Same-day and multi-day outage/weather models | `06_outage_extreme_weather_logit_same_day.ipynb`<br>`07_outage_extreme_weather_logit_same_day_cesi.ipynb`<br>`08_outage_extreme_weather_logit_three_day.ipynb` |
+| Sensor voltage-temperature sensitivity maps | `09_map_voltage_temperature_sensitivity.ipynb` |
+| EA outage-risk maps by weather event and CESI | `10_map_outage_weather_odds_by_ea.ipynb` |
+| Daily and monthly extreme-weather heatmaps | `11_extreme_weather_daily_monthly_heatmaps.ipynb` |
+| Monthly distributions of PQR-derived SAIDI metrics for 2022 and 2023 | `12_monthly_pqr_saidi_2022_2023.ipynb` |
+| Yearly reliability-metric comparison (sensor-estimated versus official values) | `13_yearly_reliability_metrics_comparison.ipynb` |
+| Supplementary study-area maps (optional) | `supporting_analyses/s01_supplementary_study_area_maps.ipynb` |
+| TAHMO versus Copernicus comparison (optional) | `supporting_analyses/s02_compare_tahmo_copernicus_weather.ipynb` |
+| TAHMO versus CHIRPS comparison (optional) | `supporting_analyses/s03_compare_tahmo_chirps_precipitation.ipynb` |
+| Voltage comparison across weather variables (optional) | `supporting_analyses/s04_compare_voltage_weather_variables.ipynb` |
+| Supplementary weather distributions/CDFs (optional) | `supporting_analyses/s05_supplementary_weather_distributions.ipynb` |
 
 ## Outputs
 
@@ -246,13 +246,13 @@ Unless otherwise noted, intermediate and derived tabular datasets are stored und
 
 The following notebooks are retained temporarily:
 
-- `notebooks/archived/Extreme_Weather_per_Month.ipynb`
-- `notebooks/archived/_Logit_Co_occurrence_per_EA_overlapping_hours_full_model_3_day.ipynb`
-- `notebooks/archived/_Logit_spatial_analysis_outage_per_EA.ipynb`
-- `notebooks/archived/_Logit_spatial_analysis_outage_per_EA_rev1.ipynb`
-- `notebooks/archived/_Logit_spatial_analysis_outage_per_EA_rev2_copy.ipynb`
-- `notebooks/archived/_Logit_spatial_analysis_rev1.ipynb`
-- `notebooks/archived/_Logit_spatial_analysis_undervolt_Copy1.ipynb`
-- `notebooks/archived/_pre_processing_undervolt_workflow_rev1_process_with_plotting_with_CESI.ipynb`
+- `notebooks/archived/a01_extreme_weather_daily_monthly_heatmaps_initial.ipynb`
+- `notebooks/archived/a02_outage_extreme_weather_logit_three_day_initial.ipynb`
+- `notebooks/archived/a03_map_outage_weather_odds_by_ea_initial.ipynb`
+- `notebooks/archived/a04_map_outage_weather_odds_by_ea_updated.ipynb`
+- `notebooks/archived/a05_map_outage_weather_odds_by_ea_updated_copy.ipynb`
+- `notebooks/archived/a06_exploratory_spatial_outage_analysis.ipynb`
+- `notebooks/archived/a07_map_voltage_temperature_sensitivity_copy.ipynb`
+- `notebooks/archived/a08_prepare_hourly_undervoltage_with_cesi.ipynb`
 
 Additional superseded or duplicate notebooks may be moved to an archive as the repository is consolidated.
